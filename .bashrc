@@ -29,6 +29,7 @@ alias v="vim"
 alias vv="cd; vim .vimrc"
 alias vb="cd; vim .bashrc"
 alias vbp="cd; vim .bash_profile"
+alias ud="cd; cd ~/scripts; bash updateDotfiles.sh"
 
 
 
