@@ -1,6 +1,6 @@
 # Colors 
 bold="$(tput bold)"
-#testing with comment"
+
 orange="\001$(tput setaf 166)\002"
 turquoise="\001$(tput setaf 30)\002"
 purple="\001$(tput setaf 91)\002"
