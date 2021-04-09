@@ -1,42 +1,29 @@
-# Set prompt
-function set_prompt {
-	local prompt_char=$([[ $(whoami) == "root" ]] && echo '#' || echo '$')
+# Colors 
+bold="$(tput bold)"
 
-	#local git_branch=$([[ $(git branch 2> /dev/null) ]] | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-    
-	local bold="$(tput bold)"
+orange="\001$(tput setaf 166)\002"
+turquoise="\001$(tput setaf 30)\002"
+purple="\001$(tput setaf 91)\002"
+pink="\001$(tput setaf 200)\002"
+green="\001$(tput setaf 34)\002"
+dark_red="\001$(tput setaf 88)\002"
+white="\001$(tput setaf 255)\002"
+reset="\001$(tput sgr0)\002"
 
-	local orange="\001$(tput setaf 166)\002"
-	local turquoise="\001$(tput setaf 30)\002"
-	local purple="\001$(tput setaf 91)\002"
-	local pink="\001$(tput setaf 200)\002"
-	local green="\001$(tput setaf 34)\002"
-	local white="\001$(tput setaf 255)\002"
-	local reset="\001$(tput sgr0)\002"
-
-	local git="$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')"
-	export PS1="${bold}${turquoise}\u${white}@${purple}\h${white}:${pink}\w${green}$($(git branch) 2> /dev/null)${reset} "
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-function git_branch() {
-	local hh="$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')"
-	echo "${hh}"
+prompt_char() {	
+  [[ $(whoami) == "root" ]] && echo '#' || echo '$'
 }
 
-set_prompt
-
-#echo $(git branch)
-
-#a=$(set_prompt)
-#b=$(git_branch)
-
-#export PS1="${a}${b}"
-
-#export PS1="${bold}${turquoise}\u${white}@${purple}\h${white}:${pink}\w$(git_branch)${reset}${prompt_char} "
+export PS1="${bold}${turquoise}\u${white}@${purple}\h${white}:${pink}\w${white}-${green}\$(git_branch)${dark_red}\$(prompt_char)${reset} "
 
 ### Aliases ###
 alias myip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
 alias pro="open /Users/gavischneider/Desktop/Programming/"
+alias brewup="brew update && brew upgrade"
 alias ls="lsd -a"
 alias v="vim"
 alias vv="cd; vim .vimrc"

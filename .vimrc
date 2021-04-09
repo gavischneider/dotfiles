@@ -1,6 +1,7 @@
 call plug#begin('~/.vimplugins')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'vim-airline/vim-airline'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ryanoasis/vim-devicons' "Last
 call plug#end()
 
@@ -15,28 +16,12 @@ set incsearch
 set showmode
 set title
 set encoding=UTF-8
-"set guifont=DroidSansMono_Nerd_Font:h11
 
 syntax on
-syntax enable
 
-highlight Comment ctermfg=Green
-
-highlight String ctermfg=Magenta
-highlight Character ctermfg=Magenta
-highlight Number ctermfg=DarkGreen
-highlight Boolean ctermfg=DarkGreen
-highlight Float ctermfg=DarkGreen
-
-highlight Function ctermfg=Yellow
-
-highlight Conditional ctermfg=DarkRed
-highlight Repeat ctermfg=DarkRed
-highlight Label ctermfg=DarkYellow
-highlight Operator ctermfg=DarkYellow
-highlight Keyword ctermfg=DarkMagenta
-highlight Exception ctermfg=Blue
-
-"highlight Structure ctermfg=Green
+" Settings for Dracula theme
+let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
 
 nmap <leader>' :CocCommand explorer<CR>
