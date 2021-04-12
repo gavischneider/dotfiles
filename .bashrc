@@ -1,6 +1,5 @@
 # Colors 
 bold="$(tput bold)"
-
 orange="\001$(tput setaf 166)\002"
 turquoise="\001$(tput setaf 30)\002"
 purple="\001$(tput setaf 91)\002"
@@ -18,14 +17,20 @@ prompt_char() {
   [[ $(whoami) == "root" ]] && echo '#' || echo '$'
 }
 
+# Set Bat's config directory
+export BAT_CONFIG="~/"
+export BAT_THEME="Dracula"
+
+# Set prompt
 export PS1="${bold}${turquoise}\u${white}@${purple}\h${white}:${pink}\w${white}-${green}\$(git_branch)${dark_red}\$(prompt_char)${reset} "
 
 ### Aliases ###
 alias myip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
+alias pr="cd; cd ~/Desktop/Programming/"
 alias pro="open /Users/gavischneider/Desktop/Programming/"
 alias brewup="brew update && brew upgrade"
 alias ls="lsd -a"
-alias cat="bat"
+alias cat="bat --paging=never"
 alias v="vim"
 alias vv="cd; vim .vimrc"
 alias vb="cd; vim .bashrc"
