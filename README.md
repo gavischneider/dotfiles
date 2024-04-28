@@ -5,4 +5,3 @@ My dotfiles
 - Vim 
 - Neovim (transitioning from Vim)
 - Tmux
-- 
