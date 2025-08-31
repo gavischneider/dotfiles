@@ -1,1 +1,14 @@
+# macOS
 .DS_Store
+
+# Dropbox
+.dropbox
+
+# Virtualenv
+.venv
+
+# Node and npm
+.node_repl_history
+.npm
+node_modules/
+
