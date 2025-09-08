@@ -1,7 +1,11 @@
 # dotfiles
+
 My dotfiles
 
-- Bash
-- Vim 
-- Neovim (transitioning from Vim)
+- Zsh
+- Oh My Zsh
+- Powerline10k
+- Neovim
 - Tmux
+- Prettier
+- Ghostty
