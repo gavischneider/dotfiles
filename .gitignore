@@ -12,3 +12,5 @@
 .npm
 node_modules/
 
+# Test files
+test/
