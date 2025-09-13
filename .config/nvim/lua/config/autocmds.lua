@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
-  end,
+  end
 })
 
 -- Remove trailing whitespace on save
@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     local save_cursor = vim.fn.getpos(".")
     vim.cmd([[%s/\s\+$//e]])
     vim.fn.setpos(".", save_cursor)
-  end,
+  end
 })
 
 -- Auto-resize splits when terminal is resized
@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("VimResized", {
   group = vim.api.nvim_create_augroup("ResizeSplits", { clear = true }),
   callback = function()
     vim.cmd("tabdo wincmd =")
-  end,
+  end
 })
 
 -- Close certain filetypes with q
@@ -32,6 +32,9 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "help", "startuptime", "qf", "lspinfo" },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = event.buf, silent = true })
-  end,
+    vim.keymap.set("n", "q", "<cmd>close<CR>", {
+      buffer = event.buf,
+      silent = true
+    })
+  end
 })

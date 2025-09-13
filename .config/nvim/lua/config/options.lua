@@ -8,7 +8,7 @@ vim.opt.number = true
 vim.opt.mouse = "a"
 
 -- Clipboard integration
-vim.opt.clipboard:append({"unnamed", "unnamedplus"})
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
 -- Tab and indentation settings
 vim.opt.tabstop = 4
@@ -39,4 +39,4 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Completion
-vim.opt.completeopt = {"menu", "menuone", "noselect", "noinsert", "fuzzy", "nosort"}
+vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert", "fuzzy", "nosort" }
