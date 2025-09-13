@@ -13,12 +13,13 @@
   "insertPragma": false,
   "requirePragma": false,
   "embeddedLanguageFormatting": "off",
-  "overrides": [
-    {
-      "files": ["*.html"],
-      "options": {
-        "tabWidth": 4
-      }
-    }
-  ]
+  "multilineArraysWrapThreshold": 0,
+  "plugins": ["@prettier/plugin-lua", "prettier-plugin-multiline-arrays"],
+  "overrides":
+    [
+      { "files": "*.html", "options": { "tabWidth": 4 } },
+      { "files": "*.json", "options": { "tabWidth": 4 } },
+      { "files": ["*.yaml", "*.yml"], "options": { "tabWidth": 4 } },
+      { "files": "*.lua", "options": { "printWidth": 125 } }
+    ]
 }
