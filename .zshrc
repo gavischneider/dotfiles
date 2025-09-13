@@ -30,9 +30,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
   export EDITOR='nvim'
+else
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -59,6 +59,7 @@ alias npmout='npm outdated -g --depth=0'    # See which global packages are outd
 alias npmup='npm update -g'                 # Update global packages
 alias zshrc='nvim ~/.zshrc'                 # Edit Zsh config
 alias colormap='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done' # Print colormap
+alias python='/opt/homebrew/bin/python3'    # Use Homebrew Python3
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -77,7 +78,6 @@ export BAT_THEME=base16
 typeset -U PATH
 
 # Source functions file
-source ~/.zsh/zfunctions.zsh
+[[ -f "$HOME/.zsh/zfunctions.zsh" ]] && source "$HOME/.zsh/zfunctions.zsh"
 
 remove_path_junk
-alias python=/opt/homebrew/bin/python3
