@@ -16,7 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Disable marking untracked files under VCS as dirty. This makes repository 
+# Disable marking untracked files under VCS as dirty. This makes repository
 # status check for large repositories much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -48,13 +48,15 @@ fi
 
 alias brewup='brew update && brew upgrade'  # Update & Upgrade Homebrew
 alias myip='curl ifconfig.me'               # Get public IP address
-alias ls='eza --icons=always'               # Replace ls with eza
+alias ls='eza --icons=always --git'         # Replace ls with eza
 alias ppath='printf "%s\n" ${(s/:/)PATH}'   # Print PATH entities on separate lines
 alias pfpath='printf "%s\n" ${(s/ /)fpath}' # Print fpath entities on separate lines
 alias rm='trash'                            # Map rm to trash
 alias gho='nvim ~/.config/ghostty/config'   # Edit Ghostty config
+alias ghov='ghostty +version'               # View Ghostty version
 alias ghothemes='ghostty +list-themes'      # View Ghostty themes
 alias ghofonts='ghostty +list-fonts'        # View Ghostty fonts
+alias ghokeys='ghostty +list-keybinds'      # View Ghostty keymaps
 alias npmout='npm outdated -g --depth=0'    # See which global packages are outdated
 alias npmup='npm update -g'                 # Update global packages
 alias zshrc='nvim ~/.zshrc'                 # Edit Zsh config
