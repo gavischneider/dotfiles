@@ -14,3 +14,5 @@ node_modules/
 
 # Test files
 test/
+
+insert_newline_after_brace.zsh
