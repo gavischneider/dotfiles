@@ -1,5 +1,5 @@
--- This is the base plugin that installs LSP servers, DAPs, linters, formatters, etc.
--- We also add mason-lspconfig as a dependency to automatically configure LSP servers with nvim-lspconfig.
+-- This is the base plugin that installs LSP servers, DAPs, linters, formatters, etc
+-- We also add mason-lspconfig as a dependency to automatically configure LSP servers with nvim-lspconfig
 
 return {
   "williamboman/mason.nvim",
@@ -21,7 +21,8 @@ return {
 
     mason_lspconfig.setup({
       -- list of servers for mason to install
-      ensure_installed = { "lua_ls", "html", "jsonls", "eslint", "pyright" }
-    })
+      ensure_installed = { "lua_ls", "html", "jsonls", "eslint", "pyright" },
+      automatic_enable = false
+  })
   end
 }
