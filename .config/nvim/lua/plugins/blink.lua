@@ -1,11 +1,11 @@
 return {
     {
-        'saghen/blink.cmp',
+        "saghen/blink.cmp",
         -- optional: provides snippets for the snippet source
-        dependencies = { 'rafamadriz/friendly-snippets' },
+        dependencies = { "rafamadriz/friendly-snippets" },
 
         -- use a release tag to download pre-built binaries
-        version = '1.*',
+        version = "1.*",
 
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
@@ -22,22 +22,33 @@ return {
             -- C-k: Toggle signature help (if signature.enabled = true)
             --
             -- See :h blink-cmp-config-keymap for defining your own keymap
-            keymap = { preset = 'default' },
+            keymap = { preset = "default" },
 
             appearance = {
                 -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
                 -- Adjusts spacing to ensure icons are aligned
-                nerd_font_variant = 'mono'
+                nerd_font_variant = "mono"
             },
 
             signature = { enabled = true },
 
             -- (Default) Only show the documentation popup when manually triggered
-            completion = { documentation = { auto_show = false } },
+            completion = {
+                menu = {
+                    -- nvim-cmp style menu
+                    draw = {
+                        columns = {
+                            { "label",     "label_description", gap = 1 },
+                            { "kind_icon", "kind" }
+                        },
+                    }
+                },
+                documentation = { auto_show = false }
+            },
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer' },
+                default = { "lsp", "path", "snippets", "buffer" },
             },
 
             -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
